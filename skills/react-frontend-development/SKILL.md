@@ -56,3 +56,4 @@ Each rule file contains:
 - [ts-concurrency](references/ts-concurrency.md) - How to properly use Typescript concurrency
 - [ts-comments](references/ts-comments.md) - How to properly use Typescript comments
 - [ts-error-handling](references/ts-error-handling.md) - How to properly handle Typescript errors
+- [ts-enums](references/ts-enums.md) - How to properly use Typescript enums for finite comparisons
