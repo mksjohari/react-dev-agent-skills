@@ -1,6 +1,7 @@
 ---
-title: Typescript error handling
-description: Functions or promises that may throw an error should always be handled
+name: ts-error-handling
+description: TypeScript error handling conventions. Use when writing try/catch blocks, handling errors from functions or promises, or implementing error reporting in TypeScript code.
+user-invocable: false
 ---
 
 # Error handling

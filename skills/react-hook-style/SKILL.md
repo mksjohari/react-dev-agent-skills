@@ -1,6 +1,7 @@
 ---
-title: React hook structure
-description: React hook structure for easy readability
+name: react-hook-style
+description: React hook structure conventions. Use when creating or modifying React custom hooks (use*.ts files), including hook props interfaces and return types.
+user-invocable: false
 ---
 
 # React hook structure

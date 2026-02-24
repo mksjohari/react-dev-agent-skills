@@ -1,6 +1,7 @@
 ---
-title: Typescript interface best practices
-description: Always prefer interfaces over types for extensibility, and use an "I" prefix for interfaces
+name: ts-interfaces
+description: TypeScript interface conventions. Use when defining TypeScript interfaces or type aliases, including preferring interfaces over types, using the "I" prefix for interface names, and extending interfaces.
+user-invocable: false
 ---
 
 # Typescript interfaces

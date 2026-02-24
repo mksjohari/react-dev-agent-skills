@@ -1,6 +1,7 @@
 ---
-title: Typescript variable conventions
-description: Variables names should be simple, meaningful and clear that explain what they do
+name: ts-variables
+description: TypeScript variable conventions. Use when declaring or naming TypeScript variables, including camelCase naming, meaningful names, explicit typing, searchable constants, explanatory variables, and default parameters.
+user-invocable: false
 ---
 
 # Variables

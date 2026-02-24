@@ -1,6 +1,7 @@
 ---
-title: Typescript concurrency conventions
-description: Always use prefer async/await over callbacks and promises
+name: ts-async
+description: TypeScript async/await conventions. Use when working with promises, async/await, callbacks, or asynchronous code patterns in TypeScript.
+user-invocable: false
 ---
 
 # Always prefer async/await over callbacks and promises

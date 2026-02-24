@@ -1,6 +1,7 @@
 ---
-title: Typescript comments
-description: Comments should be an apology, not a requirement
+name: ts-comments
+description: TypeScript comment conventions. Use when writing comments in TypeScript code, including avoiding unnecessary comments, removing commented-out code, and only commenting business logic complexity.
+user-invocable: false
 ---
 
 # Comments

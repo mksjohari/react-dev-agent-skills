@@ -1,6 +1,7 @@
 ---
-title: Using Tanstack Query to fetch data in a React component
-description: Best practices inside a component when fetching component data
+name: react-query-components
+description: Using TanStack Query hooks inside React components. Use when consuming useQuery or useMutation results in a component, handling loading/error/refetching states, providing default values for query data, or calling mutations with onSuccess/onError callbacks.
+user-invocable: false
 ---
 
 # Best practices for using Tanstack Query in a React component
@@ -9,7 +10,7 @@ These guidelines standardise the usage of the Tanstack Query hooks in a React co
 
 ## When to use
 
-Use this skill when fetching data inside a React component. Refer to [data-component-fetching](./data-component-fetching.md) for the query hooks format.
+Use this skill when fetching data inside a React component. Refer to the react-query-hooks skill for the query hooks format.
 
 ## Using a query in the component
 

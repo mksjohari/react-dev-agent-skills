@@ -1,6 +1,7 @@
 ---
-title: React data fetching with Tanstack Query
-description: Always use Tanstack Query and axios for API calls in React
+name: react-query-hooks
+description: TanStack Query (React Query) hook conventions. Use when writing API calls, useQuery hooks, useMutation hooks, query keys, axios requests, or data fetching/mutating hooks in React.
+user-invocable: false
 ---
 
 # API calls in React

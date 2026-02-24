@@ -1,6 +1,7 @@
 ---
-title: React application repository folder and file structure
-description: React folder and file structure for easily managed code
+name: react-repo-structure
+description: React project file and folder structure conventions. Use when creating new files or folders in a React project, including component folders, hook folders, page folders, barrel exports, and service/test file naming.
+user-invocable: false
 ---
 
 # React folder and file structure

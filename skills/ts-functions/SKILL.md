@@ -1,6 +1,7 @@
 ---
-title: Typescript function conventions
-description: Functions should be simple, straightforward and have clear separation of concerns
+name: ts-functions
+description: TypeScript function conventions. Use when writing or refactoring TypeScript functions, including arrow function syntax, explicit typing, early returns, parameter destructuring, single responsibility, avoiding side effects, and removing duplicate code.
+user-invocable: false
 ---
 
 # Functions

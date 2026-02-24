@@ -1,6 +1,7 @@
 ---
-title: React component structure
-description: React component structure for easy readability
+name: react-component-style
+description: React component structure conventions. Use when creating or modifying React components (.tsx files with JSX), including function components, props interfaces, helper render functions, and extracting custom hooks from complex components.
+user-invocable: false
 ---
 
 # React component structure

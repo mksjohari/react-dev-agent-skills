@@ -1,6 +1,7 @@
 ---
-title: Typescript enums
-description: Always use enums over magic strings
+name: ts-enums
+description: TypeScript enum conventions. Use when doing string comparisons, working with finite value sets, magic strings, or defining enums in TypeScript code.
+user-invocable: false
 ---
 
 # Always use enums over magic strings
