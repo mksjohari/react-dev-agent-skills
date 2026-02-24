@@ -51,7 +51,7 @@ Each rule file contains:
 ### 3. Typescript coding style
 
 - [ts-variables](references/ts-variables.md) - How to properly use Typescript variables
-- [ts-interfaces](references/ts-interfaces.md) - How to properly use Typescript interfaces
+- [ts-interfaces](references/ts-interfaces.md) - How to properly use Typescript interfaces over types
 - [ts-functions](references/ts-functions.md) - How to properly use Typescript functions
 - [ts-concurrency](references/ts-concurrency.md) - How to properly use Typescript concurrency
 - [ts-comments](references/ts-comments.md) - How to properly use Typescript comments
