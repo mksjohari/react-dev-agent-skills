@@ -4,45 +4,23 @@ description: TypeScript error handling conventions. Use when writing try/catch b
 user-invocable: false
 ---
 
-# Error handling
+# Error Handling
 
 Never ignore handling of errors in a function or promise.
 
-## When to use
+## Rules
 
-Use this skill when working with a Typescript function or promise has a potential to throw an error.
+1. **Never ignore caught errors.** Always handle errors with `console.error`, a user notification, or an error reporting service. Using `console.log` alone is insufficient -- use `console.error` at minimum.
+2. **Wrap potentially throwing code with `try/catch`.** Always wrap code that may throw an error and fail gracefully.
 
-## Don't ignore caught errors from functions or promises
+## When to Use
 
-Always wrap the bit of code that an error may occur with `try/catch` and fail gracefully.
+Use this skill when working with a TypeScript function or promise that has the potential to throw an error.
 
-**Incorrect:**
+## Templates and Examples
 
-```typescript
-try {
-  functionThatMightThrow();
-  await promiseThatMightThrow();
-} catch (error) {
-  console.log(error);
-}
-```
-
-**Correct:**
-
-```typescript
-try {
-  functionThatMightThrow();
-  await promiseThatMightThrow();
-} catch (error) {
-  // One option (more noisy than console.log):
-  console.error(error);
-  // Another option:
-  notifyUserOfError(error);
-  // Another option:
-  reportErrorToService(error);
-  // OR do all three!
-}
-```
+- See `template.md` for the standard try/catch with proper error handling pattern.
+- See `examples/sample.md` for correct and incorrect usage examples.
 
 ## References
 

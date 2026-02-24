@@ -8,72 +8,19 @@ user-invocable: false
 
 Comments are an apology, not a requirement. Good code should document itself.
 
-## When to use
+## Rules
 
-Use this skill when writing Typescript comments.
+1. **Only comment things that have business logic complexity.** Comments should only explain business logic that others may not have prior knowledge of. Do not comment obvious operations -- let descriptive naming do the work.
+2. **Never leave commented-out code in the codebase.** Version control exists for a reason. Delete unused code rather than commenting it out.
 
-## Only comment things that have business logic complexity
+## When to Use
 
-Good code should document itself. Comments should only explain business logic that others may not have prior knowledge of.
+Use this skill when writing TypeScript comments.
 
-**Incorrect:**
+## Templates and Examples
 
-```typescript
-/** Hashes a string to an integer **/
-const hashIt = (data: string) => {
-  // The hash
-  let hash = 0;
-
-  // Length of string
-  const length = data.length;
-
-  // Loop through every character in data
-  for (let i = 0; i < length; i++) {
-    // Get character code.
-    const char = data.charCodeAt(i);
-    // Make the hash
-    hash = (hash << 5) - hash + char;
-    // Convert to 32-bit integer
-    hash &= hash;
-  }
-};
-```
-
-**Correct:**
-
-```typescript
-const hashStringToInt = (data) => {
-  let hash = 0;
-  const length = data.length;
-
-  for (let i = 0; i < length; i++) {
-    const char = data.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-
-    // Convert to 32-bit integer
-    hash &= hash;
-  }
-};
-```
-
-## Don't leave commented out code in the codebase
-
-Version control exists for a reason.
-
-**Incorrect:**
-
-```typescript
-doStuff();
-// doOtherStuff();
-// doSomeMoreStuff();
-// doSoMuchStuff();
-```
-
-**Correct:**
-
-```typescript
-doStuff();
-```
+- See `template.md` for the pattern showing when and how to comment.
+- See `examples/sample.md` for correct and incorrect usage examples.
 
 ## Reference
 

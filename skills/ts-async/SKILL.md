@@ -4,50 +4,22 @@ description: TypeScript async/await conventions. Use when working with promises,
 user-invocable: false
 ---
 
-# Always prefer async/await over callbacks and promises
+# Async/Await
 
-Using the async await syntax we get a cleaner solution without any `then` chains of functions.
+Using the async/await syntax we get a cleaner solution without any `.then()` chains of functions.
 
-**Incorrect:**
+## Rules
 
-```typescript
-import { get } from "request-promise";
-import { writeFile } from "fs-extra";
+1. **Always prefer async/await over `.then()` chains and callbacks.** Async/await produces cleaner, more readable code that is easier to debug and reason about.
 
-get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin")
-  .then((body) => {
-    return writeFile("article.html", body);
-  })
-  .then(() => {
-    console.log("File written");
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-```
+## When to Use
 
-**Correct:**
+Use this skill when working with TypeScript promises and callbacks.
 
-```typescript
-import { get } from "request-promise";
-import { writeFile } from "fs-extra";
+## Templates and Examples
 
-const getCleanCodeArticle = async () => {
-  try {
-    const body = await get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin");
-    await writeFile("article.html", body);
-    console.log("File written");
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-getCleanCodeArticle();
-```
-
-## When to use
-
-Use this skill when working with Typescript promises and callbacks.
+- See `template.md` for the standard async/await with try/catch pattern.
+- See `examples/sample.md` for correct and incorrect usage examples.
 
 ## Reference
 

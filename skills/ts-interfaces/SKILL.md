@@ -4,64 +4,25 @@ description: TypeScript interface conventions. Use when defining TypeScript inte
 user-invocable: false
 ---
 
-# Typescript interfaces
+# TypeScript Interfaces
 
-Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable. Furthermore, Typescript recommends using interfaces over type aliases because of performance and display gains. For this reason we will always use interfaces over types.
+Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable. Furthermore, TypeScript recommends using interfaces over type aliases because of performance and display gains.
 
-## When to use
+## Rules
 
-Use this skill when creating Typescript interface or type definitions.
+1. **Always use interfaces over type aliases.** Interfaces are extendable, perform better at compile time, and produce cleaner error messages.
+2. **Prefix interface names with "I".** This makes interfaces immediately identifiable when reading code (e.g., `ISomeInterface`).
+3. **Use `extends` for composition.** When combining multiple interfaces, use the `extends` keyword rather than intersection types (`&`).
 
-## Prefer Typescript interfaces over types
+## When to Use
 
-**Incorrect:**
+Use this skill when creating TypeScript interface or type definitions.
 
-```typescript
-type Foo = { prop: string };
-type Bar = { otherProp: string };
+## Templates and Examples
 
-type FooBarBaz = Foo &
-  Bar & {
-    someProp: string;
-  };
-```
-
-**Correct:**
-
-```typescript
-interface Foo {
-  prop: string;
-}
-
-interface Bar {
-  otherProp: string;
-}
-
-interface FooBarBaz extends Foo, Bar {
-  someProp: string;
-}
-```
-
-## Prefix interface definitions with "I"
-
-Makes it easier to read.
-
-**Incorrect:**
-
-```typescript
-interface SomeInterface {
-  prop: string;
-}
-```
-
-**Correct:**
-
-```typescript
-interface ISomeInterface {
-  prop: string;
-}
-```
+- See `template.md` for the standard interface definition and composition patterns.
+- See `examples/sample.md` for correct and incorrect usage examples.
 
 ## Reference
 
-[Typescript documentation on performance](https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections)
+[TypeScript documentation on performance](https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections)

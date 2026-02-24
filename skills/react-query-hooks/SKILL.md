@@ -18,143 +18,28 @@ Use this skill when writing code to fetch / mutate data in React.
 
 Create a hook to wrap the useQuery hook to fetch the data. The hook name should indicate what data it is fetching. This hook should be inside a `hook.ts` file.
 
-**Incorrect:**
-
-```typescript
-useEffect(() => {
-  const res = await fetch(`http://example.com/api/client/${clientId}`);
-}, []);
-```
-
-**Correct:**
-
-```typescript
-import { useQuery } from "@tanstack/react-query";
-
-const clientInfoKey = "clientInfoKey";
-
-const getClientInfo = async (clientId: string): Promise<IClientDTO> => {
-  const response = await axios.get<IClientDTO>(
-    `http://example.com/api/client/${clientId}`,
-  );
-  return response.data;
-};
-
-export const useClientInfo = (clientId: string) => {
-  return useQuery({
-    queryKey: [clientInfoKey, clientId],
-  });
-};
-```
+See `template.md` for the useQuery hook pattern and `examples/sample.md` for incorrect/correct examples.
 
 ## Use the useMutation hook for mutating data
 
 Create a hook to wrap the useMutation hook to mutate the data. The hook name should indicate what data it is mutating. Then we should invalidate the related query that queries this data. This hook should be inside a `hook.ts` file.
 
-**Incorrect:**
-
-```typescript
-useEffect(() => {
-  const res = await fetch(`http://example.com/api/client/${clientId}`, {
-    method: "POST",
-    body: JSON.stringify({ username: "example" }),
-  });
-}, []);
-```
-
-**Correct:**
-
-```typescript
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-
-const clientInfoKey = "clientInfoKey";
-
-const updateClientInfo = async ({
-  clientId,
-  clientInfo,
-}: IUpdateClientInfoRequest): Promise<IClientInfoDTO> => {
-  const response = await axios.get<IClientInfoDTO>(
-    `http://example.com/api/client/${clientId}`,
-    clientInfo,
-  );
-  return response.data;
-};
-
-export const useUpdateClientInfo = () => {
-  const queryClient = new QueryClient();
-
-  return useMutation({
-    mutationFn: updateClientInfo,
-    onSuccess: (_, variables) => {
-      queryClient.invalidateQueries({
-        queryKey: [clientInfoKey, variables.clientId],
-      });
-    },
-  });
-};
-```
+See `template.md` for the useMutation hook pattern and `examples/sample.md` for incorrect/correct examples.
 
 ## Create type file to keep all request and response shapes
 
 Create `types.ts` to keep all the type definitions of request params and response DTOs.
 
-```typescript
-// types.ts
-
-export interface IUpdateClientInfoRequest {
-  clientId: string;
-  clientInfo: IClientInfoDTO;
-}
-
-export interface IClientInfoDTO {
-  username: string;
-  name: string;
-  createdTimestamp: string;
-}
-```
+See `template.md` for the types.ts pattern.
 
 ## Create transformer file to map DTO to client useable viewmodel
 
 If the data from API response needs to be transformed to match frontend client use case, create a `transformer.ts` file to do the mapping, and type this transformed shape as a VM. Use this transform function in the `select` param of `useQuery`.
 
-```typescript
-// types.ts
-export interface IClientInfoVM {
-  username: string;
-  name: string;
-  createdDate: Date;
-}
+See `template.md` for the transformer.ts pattern with select.
 
-// transformer.ts
-const transformClientInfoDTOToVM = (
-  clientInfo: IClientInfoDTO,
-): IClientInfoVM => {
-  return {
-    ...clientInfo,
-    createdDate: new Date(clientInfo.createdTimestamp),
-  };
-};
+## Folder structure
 
-/// hook.ts
-export const useClientInfo = (clientId: string) => {
-  return useQuery({
-    queryKey: [clientInfoKey, clientId],
-    select: transformClientInfoDTOToVM,
-  });
-};
-```
+All query-related files follow a consistent folder structure convention.
 
-## Example complete folder structure of a API hook using Tanstack Query
-
-```
-hooks/
-  └── queries/
-    └── client/
-      └── hook.ts // contains the mutations and queries
-      └── transformer.ts // contains the transformer functions
-      └── types.ts // contains the request and response type definitions
-      └── index.ts
-    └── index.ts
-  └── index.ts
-
-```
+See `template.md` for the complete folder structure.

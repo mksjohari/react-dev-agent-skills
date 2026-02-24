@@ -16,72 +16,16 @@ Use this skill when fetching data inside a React component. Refer to the react-q
 
 Destructure the return of the `useQuery` hook, and always handle the loading, refetching and error states.
 
-```typescript
-const MyComponent = () => {
-  const { data: clientInfo, isLoading, isRefetching, isError } = useClientInfo(clientId);
-
-  if (isLoading || isRefetching) {
-    // handle loading state
-    return <LoadingSpinner />;
-  }
-
-  if (isError) {
-    // handle error state
-    return <Error />;
-  }
-
-  return <div>Hello world</div>
-};
-```
+See `template.md` for the query usage pattern and `examples/sample.md` for a complete example.
 
 ## Using a mutation in the component
 
 Always handle the success and error state of the mutation, giving the user some form of indication of the mutation's status.
 
-```typescript
-const MyComponent = () => {
-  const updateClientInfoMutation = useUpdateClientInfo();
-
-  const handleUpdateClientInfo = () => {
-    updateClientInfoMutation.mutate({
-      clientId,
-      clientInfo
-    }, {
-      onSuccess: () => {
-        console.log('success') // bare minimum
-        // other notifications are preferred e.g. toast / UI state update
-      }
-      onError: () => {
-        console.error('error') // bare minimum
-        // other notifications preferred e.g. toast / UI state update
-      }
-    })
-  }
-};
-```
+See `template.md` for the mutation usage pattern and `examples/sample.md` for a complete example.
 
 ## Provide a default value for the query when the query hasnt resolved
 
-This helps prevent rendering errors for when the API call hasn't succeeded yet.
+This helps prevent rendering errors for when the API call hasn't succeeded yet. If the data is an object, provide a default object. If the data is a list, provide an empty array.
 
-```typescript
-const MyComponent = () => {
-  // If the data is an object, provide a default object
-  const {
-    data: clientInfo = { name: "", username: "", createdDate: null },
-    isLoading,
-    isRefetching,
-    isError,
-  } = useClientInfo(clientId);
-};
-
-const MyOtherComponent = () => {
-  // If the data is list, provide an empty array
-  const {
-    data: clientList = [],
-    isLoading,
-    isRefetching,
-    isError,
-  } = useClientList();
-};
-```
+See `template.md` for default value patterns and `examples/sample.md` for complete examples.

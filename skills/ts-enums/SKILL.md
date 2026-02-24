@@ -4,47 +4,20 @@ description: TypeScript enum conventions. Use when doing string comparisons, wor
 user-invocable: false
 ---
 
-# Always use enums over magic strings
+# TypeScript Enums
 
-When there is a situation where you want to do string comparisons for a finite amount of known values, always prefer to use enums over using types or string literal comparisons. Enums are easier to change and manage than both of them, and should be placed in an `enum.ts` file.
+When there is a situation where you want to do string comparisons for a finite amount of known values, always prefer to use enums over using types or string literal comparisons.
 
-**Incorrect:**
+## Rules
 
-```typescript
-const currentPage = "home";
+1. **Always use enums over magic strings.** Enums are easier to change and manage than raw string literals or union types.
+2. **Place enums in an `enum.ts` file.** Keep enum definitions centralized and importable.
 
-if (currentPage === "home") {
-  // do something
-} else if (currentPage === "someOtherPage") {
-  // do something
-} else if (currentPage === "anotherPage") {
-  // do something
-}
-```
+## When to Use
 
-**Correct:**
+Use this skill when doing any form of string comparisons for a finite set of known values.
 
-```typescript
-// in enums.ts
+## Templates and Examples
 
-export enum Pages {
-  Home = "home",
-  SomeOtherPage = "someOtherPage",
-  AnotherPage = "anotherPage",
-}
-
-// in the component
-const currentPage = Pages.Home;
-
-if (currentPage === Pages.Home) {
-  // do something
-} else if (currentPage === Pages.SomeOtherPage) {
-  // do something
-} else if (currentPage === Pages.AnotherPage) {
-  // do something
-}
-```
-
-## When to use
-
-Use this skill when doing any form of string comparisons.
+- See `template.md` for the standard enum definition and usage pattern.
+- See `examples/sample.md` for correct and incorrect usage examples.
