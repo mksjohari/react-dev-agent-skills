@@ -24,7 +24,7 @@ Read individual reference files for detailed explanations and code examples. The
 
 | Category           | Importance | Prefix |
 | ------------------ | ---------- | ------ |
-| React coding style | CRITICAL   | code   |
+| React coding style | CRITICAL   | style  |
 
 Each rule file contains:
 
@@ -35,6 +35,8 @@ Each rule file contains:
 
 ## Quick overview
 
-### 1. Coding style
+### 1. React coding style
 
-- [code-file-structure](references/code-file-structure.md)
+- [style-repo-structure](references/style-repo-structure.md)
+- [style-component-structure](references/style-component-structure.md)
+- [style-hook-structure](references/style-hook-structure.md)
