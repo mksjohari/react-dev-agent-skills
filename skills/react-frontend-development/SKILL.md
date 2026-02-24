@@ -22,9 +22,10 @@ Reference these guidelines when:
 
 Read individual reference files for detailed explanations and code examples. The references are grouped in the following categories:
 
-| Category           | Importance | Prefix |
-| ------------------ | ---------- | ------ |
-| React coding style | CRITICAL   | style  |
+| Category                | Importance | Prefix |
+| ----------------------- | ---------- | ------ |
+| React coding style      | CRITICAL   | style  |
+| Typescript coding style | HIGH       | ts     |
 
 Each rule file contains:
 
@@ -40,3 +41,12 @@ Each rule file contains:
 - [style-repo-structure](references/style-repo-structure.md)
 - [style-component-structure](references/style-component-structure.md)
 - [style-hook-structure](references/style-hook-structure.md)
+
+### 2. Typescript coding style
+
+- [ts-variables](references/ts-variables.md)
+- [ts-interfaces](references/ts-interfaces.md)
+- [ts-functions](references/ts-functions.md)
+- [ts-concurrency](references/ts-concurrency.md)
+- [ts-comments](references/ts-comments.md)
+- [ts-error-handling](references/ts-error-handling.md)
